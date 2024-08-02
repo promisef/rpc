@@ -10,7 +10,7 @@ import com.sac.rpc.server.VertxHttpServer;
 public class EasyProvideExample {
     public static void main(String[] args) {
 
-        RpcApplication.init();
+//        RpcApplication.init();
         //注册本地服务
         LocalRegistry.register(UserService.class.getName(), UserServiceImpl.class);
 

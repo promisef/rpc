@@ -1,11 +1,13 @@
 package com.sac.rpc.server;
 
 
+import com.sac.rpc.RpcApplication;
 import com.sac.rpc.model.RpcRequest;
 import com.sac.rpc.model.RpcResponse;
 import com.sac.rpc.registry.LocalRegistry;
 import com.sac.rpc.serializer.JdkSerializer;
 import com.sac.rpc.serializer.Serializer;
+import com.sac.rpc.serializer.SerializerFactory;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServerRequest;
@@ -18,7 +20,7 @@ public class HttpServerHandler implements Handler<HttpServerRequest> {
     @Override
     public void handle(HttpServerRequest request) {
 
-        final Serializer serializer = new JdkSerializer();
+        final Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
         System.out.println("Received request: " + request.method() + request.uri());
 
         request.bodyHandler(body -> {

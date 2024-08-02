@@ -1,6 +1,7 @@
 package com.sac.rpc.model;
 
 
+import com.sac.rpc.constans.RpcConstant;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,5 +22,7 @@ public class RpcRequest implements Serializable {
     private Class<?>[] parameterTypes;
 
     private Object[] params;
+
+    private String serviceVersion = RpcConstant.DEFAULT_SERVICE_VERSION;
 
 }
