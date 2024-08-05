@@ -1,0 +1,3 @@
+roundRobin=com.sac.rpc.LoadBalance.RoundRobinLoadBalancer
+random=com.sac.rpc.LoadBalance.RandomLoadBalancer
+consistentHash=

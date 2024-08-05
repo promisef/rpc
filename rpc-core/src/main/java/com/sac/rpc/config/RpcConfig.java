@@ -1,5 +1,7 @@
 package com.sac.rpc.config;
 
+import com.sac.rpc.LoadBalance.LoadBalancer;
+import com.sac.rpc.LoadBalance.LoadBalancerKeys;
 import com.sac.rpc.serializer.SerializerKeys;
 import lombok.Data;
 
@@ -19,4 +21,6 @@ public class RpcConfig {
     private String serializer = SerializerKeys.JSON;
 
     private RegistryConfig registryConfig = new RegistryConfig();
+
+    private String loadBalancer = LoadBalancerKeys.ROUND_ROBIN;
 }

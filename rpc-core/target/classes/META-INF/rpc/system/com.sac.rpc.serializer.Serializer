@@ -1,3 +1,4 @@
 jdk=com.sac.rpc.serializer.JdkSerializer
-hessian=com.sac.rpc.serializer.HessianSerializer
+hessian=com.sac.rpc.serializer.HessianSerializer]
+json=com.sac.rpc.serializer.JsonSerializer
 kryo=com.sac.rpc.serializer.KryoSerializer

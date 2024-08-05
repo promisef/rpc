@@ -10,6 +10,8 @@ import com.sac.rpc.registry.Registry;
 import com.sac.rpc.registry.RegistryFactory;
 import com.sac.rpc.server.HttpServer;
 import com.sac.rpc.server.VertxHttpServer;
+import com.sac.rpc.server.tcp.VertxTcpClient;
+import com.sac.rpc.server.tcp.VertxTcpServer;
 
 public class ProvideExample {
 
@@ -32,7 +34,9 @@ public class ProvideExample {
             throw new RuntimeException(e);
         }
 
-        HttpServer httpServer = new VertxHttpServer();
-        httpServer.dostart(RpcApplication.getRpcConfig().getServerPort());
+//        HttpServer httpServer = new VertxHttpServer();
+//        httpServer.dostart(RpcApplication.getRpcConfig().getServerPort());
+        VertxTcpServer vertxTcpServer = new VertxTcpServer();
+        vertxTcpServer.doStart(8082);
     }
 }
